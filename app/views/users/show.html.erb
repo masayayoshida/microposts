@@ -1,6 +1,2 @@
 <p><%= gravatar_for @user %><%= @user.name %><%= @user.area %></p>
 <p><%= @user.profile %>
-
-<% if current_user == @user %>
-    <%= link_to "編集する" , edit_user_path(current_user) %></p>
-<% end %>
