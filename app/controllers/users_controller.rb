@@ -17,6 +17,16 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+    
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.follower_relationships
+    render 'show_follower'
+  end
+  
+  def show_follower
+  
+  end
 
   private
 

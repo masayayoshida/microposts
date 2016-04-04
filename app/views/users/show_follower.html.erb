@@ -1,0 +1,13 @@
+<h1>follower</h1>
+  <div class="row">
+  <aside class="col-md-4">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  </div>
+  <div class="col-md-8">
+      <h3>followers</h3>
+        <%= @followings.find_by(params[:id]) %>
