@@ -9,5 +9,9 @@
   </aside>
   </div>
   <div class="col-md-8">
-      <h3>followers</h3>
-        <%= @followings.find_by(params[:id]) %>
+      <h3>follower</h3>
+      
+      <% @users.each do |user| %>
+        <%= user.name %>
+      <% end %>
+

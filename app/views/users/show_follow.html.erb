@@ -1,0 +1,22 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  </div>
+  <div class="col-md-8">
+  <h3>フォロー（<%= @users.count %>）</h3>
+  
+      <% @users.each do |user| %>
+      <ol class="follow">
+        <p><%= user.name %>(<%= user.area %>)<br><%= user.profile %></p>
+      </ol>
+      <% end %>
+  
+  </div>
+  
+</div>
