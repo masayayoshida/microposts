@@ -1,2 +1,8 @@
-<p><%= gravatar_for @user %><%= @user.name %><%= @user.area %></p>
-<p><%= @user.profile %>
+<h1>Profile</h1>
+<div class= "profile_left"><%= gravatar_for @user %></div>
+<div class= "profile_right">
+<h3><%= @user.name %></h3>
+<p><%= @user.profile %></p>
+<p><%= @user.area %></p>
+</div>
+

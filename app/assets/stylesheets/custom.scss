@@ -45,6 +45,13 @@ h2 {
   color: #777;
 }
 
+h3 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -54,11 +61,9 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
@@ -104,4 +109,17 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+
+/*profile */
+
+div.profile_left {
+  margin-top: 30px;
+  width: 100px;
+  float: left;
+}
+
+div.profile_right {
+  overflow: hidden;
 }
