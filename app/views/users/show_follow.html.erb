@@ -6,17 +6,20 @@
         <%= @user.name %>
       </h1>
     </section>
+    <span style="margin-right: 30px;"><%= link_to "フォロー",  :controller => "users", :action => "following" %></span>
+    <%= link_to "フォロワー",  :controller => "users", :action => "follower" %>
   </aside>
-  </div>
   <div class="col-md-8">
-  <h3>フォロー（<%= @users.count %>）</h3>
-  
-      <% @users.each do |user| %>
-      <ol class="follow">
-        <p><%= user.name %>(<%= user.area %>)<br><%= user.profile %></p>
-      </ol>
-      <% end %>
-  
+      <h3>フォロー（<%= @users.count %>）</h3>
+      <div>
+        <% @users.each do |user| %>
+        <div>
+        <p style="clear:left;"><hr /><%= gravatar_for user %>
+         <h4><%= user.name %></h4><%= user.profile %></p>
+        </div>
+        <% end %>
+      </div>
   </div>
-  
 </div>
+
+
