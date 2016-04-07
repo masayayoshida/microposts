@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+before_action :set_user, :collect_user, only: [:edit, :update]
+
+
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
@@ -17,6 +20,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+<<<<<<< HEAD
     
   def following
     @user = User.find(params[:id])
@@ -30,11 +34,36 @@ class UsersController < ApplicationController
     render 'show_follower'
   end
   
+=======
+  
+  def edit
+    
+  end
+  
+  def update
+    if @user.update(user_params)
+      flash[:success] = "You can update!"
+      redirect_to @user , notice: 'メッセージを編集しました'
+    else
+      # 保存に失敗した場合は編集画面へ戻す
+      render 'edit'
+    end
+  end
+
+>>>>>>> user-profile
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:name, :email,  :area, :profile, :password,
                                  :password_confirmation)
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
+  
+  def collect_user
+    redirect_to(root_url) if current_user != @user
   end
   
 end

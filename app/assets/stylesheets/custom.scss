@@ -47,6 +47,12 @@ h2 {
 
 h4 {
   font-size: 1.5em;
+  
+h3 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 
 p {
@@ -58,11 +64,9 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
