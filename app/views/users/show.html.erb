@@ -5,9 +5,9 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <p><%= link_to "フォロー",  :controller => "users", :action => "following" %>
-      <%= link_to "フォロワー",  :controller => "users", :action => "follower" %></p>
     </section>
+      <span style="margin-right: 30px;"><%= link_to "フォロー",  :controller => "users", :action => "following" %>
+      <%= link_to "フォロワー",  :controller => "users", :action => "follower" %></p><%= @user.profile %>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

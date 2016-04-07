@@ -20,7 +20,6 @@ before_action :set_user, :collect_user, only: [:edit, :update]
       render 'new'
     end
   end
-<<<<<<< HEAD
     
   def following
     @user = User.find(params[:id])
@@ -34,7 +33,6 @@ before_action :set_user, :collect_user, only: [:edit, :update]
     render 'show_follower'
   end
   
-=======
   
   def edit
     
@@ -50,7 +48,6 @@ before_action :set_user, :collect_user, only: [:edit, :update]
     end
   end
 
->>>>>>> user-profile
   private
 
   def user_params
