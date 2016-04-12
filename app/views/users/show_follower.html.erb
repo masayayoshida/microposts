@@ -7,7 +7,7 @@
     </section>
       <span style="margin-right: 30px;"><%= link_to "フォロー",  :controller => "users", :action => "following" %></span>
       <%= link_to "フォロワー",  :controller => "users", :action => "follower" %>
-      <span style="margin-left: 30px;"><%= link_to "お気に入り",  :controller => "users", :action => "favolist" %></p>
+      <span style="margin-left: 30px;"><%= link_to "お気に入り",  :controller => "users", :action => "favoites" %></p>
   </aside>
   <div class="col-md-8">
       <h4>フォロワー (<%= @users.count %>)</h4>
