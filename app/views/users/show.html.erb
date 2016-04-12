@@ -6,8 +6,10 @@
         <%= @user.name %>
       </h1>
       <p><%= link_to "フォロー",  :controller => "users", :action => "following" %>
-      <%= link_to "フォロワー",  :controller => "users", :action => "follower" %></p>
+      <%= link_to "フォロワー",  :controller => "users", :action => "follower" %>
+      <%= link_to "お気に入り",  :controller => "users", :action => "favorites" %></p>
     </section>
+    <%= @user.profile %>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

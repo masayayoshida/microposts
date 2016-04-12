@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, :collect_user, only: [:edit, :update]
+before_action :set_user, :collect_user, only: [:edit, :update, :following, :follower, :favorites]
 
 
   def show
@@ -20,22 +20,8 @@ before_action :set_user, :collect_user, only: [:edit, :update]
       render 'new'
     end
   end
-    
-  def following
-    @user = User.find(params[:id])
-    @users = @user.following_users
-    render 'show_follow'
-  end
-  
-  def follower
-    @user = User.find(params[:id])
-    @users = @user.follower_users
-    render 'show_follower'
-  end
-  
   
   def edit
-    
   end
   
   def update
@@ -47,9 +33,22 @@ before_action :set_user, :collect_user, only: [:edit, :update]
       render 'edit'
     end
   end
+    
+  def following
+    @users = @user.following_users
+    render 'show_follow'
+  end
+  
+  def follower
+    @users = @user.follower_users
+    render 'show_follower'
+  end
+  
+  def favorites
+    @favorites = @user.added_favorites.order(created_at: :desc)
+  end
 
   private
-
   def user_params
     params.require(:user).permit(:name, :email,  :area, :profile, :password,
                                  :password_confirmation)
@@ -62,5 +61,4 @@ before_action :set_user, :collect_user, only: [:edit, :update]
   def collect_user
     redirect_to(root_url) if current_user != @user
   end
-  
 end

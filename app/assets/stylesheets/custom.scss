@@ -52,6 +52,12 @@ h3 {
   font-weight: normal;
 }
 
+h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -111,7 +117,6 @@ input {
   }
 }
 
-<<<<<<< HEAD
 /* sidebar */
 
 aside {
@@ -195,17 +200,3 @@ span.picture {
     border: 0;
   }
 }
-=======
-
-/*profile */
-
-div.profile_left {
-  margin-top: 30px;
-  width: 100px;
-  float: left;
-}
-
-div.profile_right {
-  overflow: hidden;
-}
->>>>>>> user-profile

@@ -1,22 +1,26 @@
-<div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
+      </h1>    
     </section>
+      <span style="margin-right: 30px;"><%= link_to "フォロー",  :controller => "users", :action => "following" %></span>
+      <%= link_to "フォロワー",  :controller => "users", :action => "follower" %>
+      <span style="margin-left: 30px;"><%= link_to "お気に入り",  :controller => "users", :action => "favolist" %></p>
   </aside>
-  </div>
   <div class="col-md-8">
-  <h3>フォロー（<%= @users.count %>）</h3>
-  
+      <h4>フォロー (<%= @users.count %>)</h4>
       <% @users.each do |user| %>
-      <ol class="follow">
-        <p><%= user.name %>(<%= user.area %>)<br><%= user.profile %></p>
-      </ol>
-      <% end %>
-  
+      <div>
+        <p style="clear:left;"><hr /><%= gravatar_for user %>
+         <h4><%= link_to user.name, user %></h4><%= user.profile %></p>
+      </div>
+    <% end %>
   </div>
   
-</div>
+  <% if micropost.favorited_by? current_user %>
+    <%= link_to "Release Favorites", micropost_favorites_path(micropost), method: :delete, data: { confirm: "You sure?" } %>
+  <% else %>
+    <%= link_to "Add Favorites", micropost_favorites_path(micropost), method: :post %>
+  <% end %>
